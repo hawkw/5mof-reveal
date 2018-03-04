@@ -28,7 +28,6 @@
 				box-shadow: 0px 0px 0px !important;
 				overflow: visible;
 			}
-			.hljs { font-family: Iosevka;!important }
 			.line { display: block; }
 			.line:not(.focus) {
 				opacity: 0.4;
@@ -63,7 +62,7 @@
 	<body>
 		<div class="reveal"><div class="slides">
 			<section id="title" data-markdown>
-				# *really* low-level rust
+				# really low-level rust
 
 				eliza weisman
 			</section>
@@ -79,10 +78,16 @@
 				<section data-markdown>
 				usually, one writes this in assembly
 				</section>
+				<section data-markdown>
+				i didn't want to
+				</section>
 			</section>
 
-			<section>
-			  <section id="old & busted" data-markdown><script type="text/template">
+			<section id="old & busted" >
+				<section data-markdown>
+					## let's look at some assembly
+				</section>
+			  <section data-markdown><script type="text/template">
 				```x86asm
 %define PAGE_TABLE_SIZE 512 * 8
 %define PAGE_SIZE 4096
@@ -330,7 +335,10 @@ export pml4_table_addr
 				<p class="fragment current-only" data-code-focus="137-142">...and this is just how you write a loop in assembly.</p>
 			  </script></section>
 			  </section>
-
+			  <section>
+				<section data-markdown>
+					## rewrite it in Rust!
+				</section>
 				<section id="rs" data-markdown><script type="text/template">
 				  ```rust
 #![crate_name = "boot32"]
@@ -574,8 +582,17 @@ fn panic_fmt() -> ! {
 				  <p class="fragment current-only" data-code-focus="48-55">...or to a page</p>
 				  <p class="fragment current-only" data-code-focus="132">remember me?</p>
 				  <p class="fragment current-only" data-code-focus="135-139">this seems familiar...</p>
-				  <p class="fragment current-only" data-code-focus="143-146">and that's how we write a loop in Rust (you know, with an actual loop)</p>
-				</script></section>
+				  <p class="fragment current-only" data-code-focus="143-146">and that's how we write a loop in Rust</p>
+				  <p class="fragment current-only" data-code-focus="144">(with an iterator!)</p>
+				</script>
+				</section>
+			</section>
+			<section data-markdown>
+				## if you like this kind of thing
+
+				- [github.com/sos-os](https://github.com/sos-os)
+				- or tweet [@mycoliza](https://twitter.com/mycoliza)
+			</section>
 		</div></div>
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>

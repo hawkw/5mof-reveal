@@ -41,7 +41,9 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@typopro/web-iosevka": "^3.7.5",
     "highlight.js": "^9.12.0",
-    "reveal-code-focus": "^1.0.0"
+    "reveal-code-focus": "^1.0.0",
+    "typopro-web": "^3.7.6"
   }
 }
